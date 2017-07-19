@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+group: edge
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+before_install:
+  - docker -v
+  - docker-compose -v
+  - docker login -u="$dockerhublogin" -p="$dockerhubpassword"
+  
+script: cd Docker && docker-compose build && docker-compose push
