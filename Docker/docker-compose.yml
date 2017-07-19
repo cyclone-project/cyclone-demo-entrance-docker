@@ -1,7 +1,7 @@
 version: '2'
 services:
  kex:
-   # image: 
+   image: cycloneproject/entrancedemo-kex
    build: components/KEX
    ports:
       - "20001:20001"
@@ -9,7 +9,7 @@ services:
       - ./data/kex:/root/.kex 
   
  frontend:
-   # image: 
+   image: cycloneproject/entrancedemo-frontend
    build: components/Frontend
 
    ports:
