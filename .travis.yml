@@ -12,6 +12,6 @@ branches:
 before_install:
   - docker -v
   - docker-compose -v
-  - docker login -u="$dockerhublogin" -p="$dockerhubpassword"
+  - docker login -u="$dockerhublogin" -p="$dockerhubpasswd"
   
 script: cd Docker && docker-compose build && docker-compose push
