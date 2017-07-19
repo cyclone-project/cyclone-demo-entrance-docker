@@ -1,0 +1,19 @@
+version: '2'
+services:
+ kex:
+   # image: 
+   build: components/KEX
+   ports:
+      - "20001:20001"
+   volumes:
+      - ./data/kex:/root/.kex 
+  
+ frontend:
+   # image: 
+   build: components/Frontend
+
+   ports:
+      - "20000:20000" 
+   volumes:
+      - ./data/entrance:/root/.entrance
+      - ./components/Frontend/config:/Entrance-PJ/Entrance-UM/src/config 
